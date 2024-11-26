@@ -1,8 +1,10 @@
 package com.zhang.composemvvm;
 
-public class seconActiivt extends AppCompatActivity{
+import androidx.appcompat.app.AppCompatActivity;
 
+public class seconActiivt extends AppCompatActivity {
     onCreate();
-
     inITView();
+
+    void initData();
 }
