@@ -1,0 +1,59 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'com.zhang.news'
+    compileSdk rootProject.compileSdk
+
+    defaultConfig {
+        minSdk rootProject.minSdk
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }
+
+
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+
+    api("androidx.compose.animation:animation:1.7.5")
+    api("androidx.compose.compiler:compiler:1.5.15")
+    api("androidx.compose.foundation:foundation:1.7.0")
+
+    api("androidx.compose.material:material:1.7.5")
+
+    api("androidx.compose.runtime:runtime:1.7.0")
+    api("androidx.compose.runtime:runtime-livedata:1.7.0")
+    api("androidx.compose.ui:ui:1.7.5")
+    implementation("io.github.scwang90:refresh-layout-kernel:2.1.0")     //核心必须依赖
+    implementation("io.github.scwang90:refresh-header-classics:2.1.0")
+    implementation "androidx.compose.ui:ui-tooling-preview:1.5.0"
+    debugImplementation "androidx.compose.ui:ui-tooling:1.5.0"
+    api(project(':network'))
+}
