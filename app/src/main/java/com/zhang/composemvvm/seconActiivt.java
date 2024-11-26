@@ -1,4 +1,6 @@
 package com.zhang.composemvvm;
 
-public class seconActiivt {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class seconActiivt extends AppCompatActivity {
 }
