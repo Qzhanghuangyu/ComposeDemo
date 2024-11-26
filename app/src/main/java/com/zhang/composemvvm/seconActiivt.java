@@ -1,4 +1,6 @@
 package com.zhang.composemvvm;
 
-public class seconActiivt {
+public class seconActiivt extends AppCompatActivity{
+
+    onCreate();
 }
